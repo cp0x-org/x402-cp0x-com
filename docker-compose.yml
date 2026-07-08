@@ -2,12 +2,12 @@ services:
   # Static Vue SPA (built into the image) served by nginx. The x402 backend that
   # answers /api/free/facilitators and /api/free/cp0x-resources is the x402-api
   # service (see ../docker-compose.yml), reached on the host at :8080.
-  pi-x402-interface:
+  x402-cp0x-com:
     build:
       context: .
       dockerfile: Dockerfile
-    image: cp0x/pi-x402-interface:0.1.0
-    container_name: pi-x402-interface
+    image: cp0x/x402-cp0x-com:0.1.0
+    container_name: x402-cp0x-com
     restart: always
     volumes:
       # Runtime config (FACILITATORS_API_URL, CP0X_SERVICES_API_URL, analytics

@@ -5,7 +5,6 @@ Web interface for the **x402** machine-payments ecosystem, by [cp0x](https://cp0
 The app lets you:
 
 - **Facilitators** (home) — browse the known x402 facilitators, check their health, and search paid services across all of them or drill into a single facilitator's catalog.
-- **Resources (cp0x)** — browse cp0x's own paid x402 endpoints (Morpho-based), served from the backend's `/api/free/cp0x-resources`, as cards or a list.
 - **Reports** — read research on the x402 marketplace; each report is a page with an in-page table of contents and available in multiple languages (EN / RU).
 
 ## Stack
@@ -60,11 +59,6 @@ The interface expects an **x402-api** backend (see the parent `x402-api` repo, p
 - `GET /api/free/facilitators` — the facilitator list
 - `GET /api/free/facilitators/{id}/resources` — a facilitator's discovery catalog (proxied)
 - `GET /api/free/facilitators/{id}/search` — semantic search across a facilitator
-- `GET /api/free/cp0x-resources` — cp0x's own paid x402 endpoints
-
-## IPFS build
-
-`npm run build:ipfs` produces a fully self-contained single-file `dist-ipfs/index.html` (all JS/CSS/images/fonts inlined) that uses hash-based routing and no absolute paths, for static hosting on IPFS.
 
 ## Docker
 

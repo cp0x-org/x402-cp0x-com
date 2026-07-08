@@ -7,7 +7,6 @@
         </router-link>
         <div class="product-links flex align-center">
           <router-link to="/" rel="noopener" class="product-link">Home</router-link>
-          <router-link to="/resources" rel="noopener" class="product-link">Resources (cp0x)</router-link>
           <router-link to="/reports" rel="noopener" class="product-link">Reports</router-link>
         </div>
         <div class="desktop-menu flex-1 flex align-center justify-between">
@@ -35,7 +34,6 @@
       <div class="mobile-nav__content">
         <div class="mobile-nav__items">
           <router-link to="/" class="mobile-nav-link" @click="menuOpen = false">Home</router-link>
-          <router-link to="/resources" class="mobile-nav-link" @click="menuOpen = false">Resources (cp0x)</router-link>
           <router-link to="/reports" class="mobile-nav-link" @click="menuOpen = false">Reports</router-link>
           <a href="https://cp0x.com/" target="_blank" rel="noopener" class="mobile-nav-link" @click="menuOpen = false">cp0x</a>
           <a href="https://pi.cp0x.com/" target="_blank" rel="noopener" class="mobile-nav-link" @click="menuOpen = false">Permissionless Interfaces</a>
