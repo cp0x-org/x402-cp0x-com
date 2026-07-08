@@ -1,0 +1,22 @@
+services:
+  # Static Vue SPA (built into the image) served by nginx. The x402 backend that
+  # answers /api/free/facilitators and /api/free/cp0x-resources is the x402-api
+  # service (see ../docker-compose.yml), reached on the host at :8080.
+  pi-x402-interface:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cp0x/pi-x402-interface:0.1.0
+    container_name: pi-x402-interface
+    restart: always
+    volumes:
+      # Runtime config (FACILITATORS_API_URL, CP0X_SERVICES_API_URL, analytics
+      # keys) is mounted over the built bundle so it can change without a rebuild.
+      # Copy public/example-config.js -> public/config.js and fill it in.
+      - ./public/config.js:/usr/share/nginx/html/config.js:ro
+    ports:
+      - "8084:80"
+    # Lets nginx's same-origin /api/ proxy reach the x402-api backend running on
+    # the host (see nginx.conf). Not needed when config.js uses absolute API URLs.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
