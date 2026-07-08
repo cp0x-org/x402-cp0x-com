@@ -1,4 +1,4 @@
-# pi-x402
+# x402-cp0x-com
 
 Web interface for the **x402** machine-payments ecosystem, by [cp0x](https://cp0x.com).
 
